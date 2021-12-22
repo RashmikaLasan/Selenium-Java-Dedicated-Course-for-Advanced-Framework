@@ -1,5 +1,6 @@
 package tests;
 
+import constants.FrameworkConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ public class FirstTest {
     @Test
     public void test1() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/java/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",FrameworkConstants.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         driver.findElement(By.name("q")).sendKeys("Selenium Automation", Keys.ENTER);
@@ -23,7 +24,7 @@ public class FirstTest {
     @Test
     public void test2() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/java/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",FrameworkConstants.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         driver.findElement(By.name("q")).sendKeys("Selenium", Keys.ENTER);
