@@ -26,6 +26,7 @@ public class Driver {
     public static void quitDriver(){
 
         if (Objects.nonNull(DriverManager.getDriver())) {
+
             DriverManager.getDriver().quit();
             DriverManager.unload();
 
