@@ -11,7 +11,7 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void startUp(){
+    public void startUp() throws Exception {
 
         Driver.initDriver();
 
