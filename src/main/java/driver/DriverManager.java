@@ -23,9 +23,4 @@ public class DriverManager {
 
         dr.remove();
     }
-
-    public static void unloads(){
-
-        dr.remove();
-    }
 }
