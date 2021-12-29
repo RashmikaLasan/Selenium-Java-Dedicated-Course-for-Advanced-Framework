@@ -4,9 +4,9 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/Lasan Rashmika/OneDrive/Documents/Automation_Projects/Selenium-Advance-Framework">
         <classes>
-            <class name="tests.FirstTest">
+            <class name="tests.OrangeHRMTest">
                 <methods>
-                    <include name="test1"/>
+                    <include name="loginTest"/>
 
                 </methods>
             </class>
