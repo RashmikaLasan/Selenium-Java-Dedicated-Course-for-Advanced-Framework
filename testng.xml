@@ -7,7 +7,7 @@
             <class name="tests.FirstTest">
                 <methods>
                     <include name="test1"/>
-                    <include name="test2"/>
+
                 </methods>
             </class>
         </classes>
