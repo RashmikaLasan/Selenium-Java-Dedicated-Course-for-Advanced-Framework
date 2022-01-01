@@ -18,7 +18,7 @@ public final class OrangeHRMHomePage {
 
     public void clickLogoutButton() throws InterruptedException {
 
-        Thread.sleep(200);
+        Thread.sleep(2000);
         DriverManager.getDriver().findElement(logoutButton).click();
     }
 
