@@ -2,6 +2,8 @@ package pages;
 
 import driver.DriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 //To prevent of extending this class
 //Won't create a constructor here;
@@ -13,24 +15,28 @@ public final class OrangeHRMLoginPage {
     private final By invalidCredsError = By.id("spanMessage");
 
 
-    public void enterUsername(String username){
+    public OrangeHRMLoginPage enterUsername(String username){
 
         DriverManager.getDriver().findElement(usernameBox).sendKeys(username);
+        return this;
     }
 
-    public void enterPassword(String password){
+    public OrangeHRMLoginPage enterPassword(String password){
 
         DriverManager.getDriver().findElement(passwordBox).sendKeys(password);
+        return this;
     }
 
-    public void clickLoginButton(){
+    public OrangeHRMHomePage clickLoginButton(){
 
         DriverManager.getDriver().findElement(loginButton).click();
+        return new OrangeHRMHomePage();
     }
 
-    public String invalidCredsErrorText() throws InterruptedException {
+    public String invalidCredsErrorText(){
 
-        Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
+        wait.until(ExpectedConditions.elementToBeClickable(invalidCredsError));
         return DriverManager.getDriver().findElement(invalidCredsError).getText();
     }
 }

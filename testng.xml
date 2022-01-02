@@ -7,7 +7,7 @@
             <class name="tests.OrangeHRMTest">
                 <methods>
                     <include name="loginTest"/>
-                    <include name="loginWithInvalidCredsTet"/>
+<!--                    <include name="loginWithInvalidCredsTet"/>-->
 
                 </methods>
             </class>

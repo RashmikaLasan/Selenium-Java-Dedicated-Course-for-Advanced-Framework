@@ -10,17 +10,17 @@ public final class OrangeHRMTest extends BaseTest {
     private OrangeHRMTest(){
     }
 
-    @Test(enabled = false)
-    public void loginTest() throws InterruptedException {
+    @Test
+    public void loginTest(){
 
         OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
-        OrangeHRMHomePage hp = new OrangeHRMHomePage();
+//        OrangeHRMHomePage hp = new OrangeHRMHomePage();
 
-        lp.enterUsername("Admin");
-        lp.enterPassword("admin321");
-        lp.clickLoginButton();
-        hp.clickWelcomeLink();
-        hp.clickLogoutButton();
+        lp.enterUsername("Admin").
+            enterPassword("admin123").
+            clickLoginButton().
+            clickWelcomeLink().
+            clickLogoutButton();
 
     }
 
@@ -30,9 +30,9 @@ public final class OrangeHRMTest extends BaseTest {
         OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
         OrangeHRMHomePage hp = new OrangeHRMHomePage();
 
-        lp.enterUsername("Admin123");
-        lp.enterPassword("admin321");
-        lp.clickLoginButton();
+        lp.enterUsername("Admin123").
+            enterPassword("admin321").
+            clickLoginButton();
 
         Assert.assertEquals(lp.invalidCredsErrorText(),"Invalid credentials");
 
