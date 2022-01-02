@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //Won't create a constructor here;
 public final class OrangeHRMHomePage {
 
-    private final By welcomeLink = By.xpath("[@id='welcome']");
+    private final By welcomeLink = By.xpath("//a[@id='welcome']");
     private final By logoutButton = By.xpath("//a[@xpath='1']");
 
 
