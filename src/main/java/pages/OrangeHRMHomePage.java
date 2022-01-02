@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //To prevent of extending this class
 //Won't create a constructor here;
-public final class OrangeHRMHomePage {
+public final class OrangeHRMHomePage extends BasePage{
 
     private final By welcomeLink = By.xpath("//a[@id='welcome']");
     private final By logoutButton = By.xpath("//a[contains(text(),'Logout')]");
@@ -17,7 +17,8 @@ public final class OrangeHRMHomePage {
 
     public OrangeHRMHomePage clickWelcomeLink(){
 
-        DriverManager.getDriver().findElement(welcomeLink).click();
+//        DriverManager.getDriver().findElement(welcomeLink).click();
+        click(welcomeLink);
         return this;
     }
 
@@ -25,7 +26,8 @@ public final class OrangeHRMHomePage {
 
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
         wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
-        DriverManager.getDriver().findElement(logoutButton).click();
+//        DriverManager.getDriver().findElement(logoutButton).click();
+        click(logoutButton);
         return new OrangeHRMLoginPage();
     }
 
