@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public final class OrangeHRMHomePage {
 
     private final By welcomeLink = By.xpath("//a[@id='welcome']");
-    private final By logoutButton = By.xpath("//a[@xpath='1']");
+    private final By logoutButton = By.xpath("//a[contains(text(),'Logout')]");
 
 
     public OrangeHRMHomePage clickWelcomeLink(){
