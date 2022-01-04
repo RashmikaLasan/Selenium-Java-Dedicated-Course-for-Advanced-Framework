@@ -18,21 +18,21 @@ public final class OrangeHRMLoginPage extends BasePage{
     public OrangeHRMLoginPage enterUsername(String username){
 
 //        DriverManager.getDriver().findElement(usernameBox).sendKeys(username);
-        sendKeys(usernameBox,username);
+        sendKeys(usernameBox,username,"present");
         return this;
     }
 
     public OrangeHRMLoginPage enterPassword(String passwordValue){
 
 //        DriverManager.getDriver().findElement(passwordBox).sendKeys(password);
-        sendKeys(passwordBox,passwordValue);
+        sendKeys(passwordBox,passwordValue,"present");
         return this;
     }
 
     public OrangeHRMHomePage clickLoginButton(){
 
 //        DriverManager.getDriver().findElement(loginButton).click();
-        click(loginButton);
+        click(loginButton,"clickable");
         return new OrangeHRMHomePage();
     }
 
@@ -41,6 +41,6 @@ public final class OrangeHRMLoginPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
         wait.until(ExpectedConditions.elementToBeClickable(invalidCredsError));
 //        return DriverManager.getDriver().findElement(invalidCredsError).getText();
-        return getText(invalidCredsError);
+        return getText(invalidCredsError,"present");
     }
 }

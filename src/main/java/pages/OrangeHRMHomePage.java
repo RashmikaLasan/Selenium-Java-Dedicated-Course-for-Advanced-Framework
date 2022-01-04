@@ -18,7 +18,7 @@ public final class OrangeHRMHomePage extends BasePage{
     public OrangeHRMHomePage clickWelcomeLink(){
 
 //        DriverManager.getDriver().findElement(welcomeLink).click();
-        click(welcomeLink);
+        click(welcomeLink,"clickable");
         return this;
     }
 
@@ -27,7 +27,7 @@ public final class OrangeHRMHomePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
         wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
 //        DriverManager.getDriver().findElement(logoutButton).click();
-        click(logoutButton);
+        click(logoutButton,"clickable");
         return new OrangeHRMLoginPage();
     }
 
