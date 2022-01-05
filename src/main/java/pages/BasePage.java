@@ -2,6 +2,7 @@ package pages;
 
 import constants.FrameworkConstants;
 import driver.DriverManager;
+import enums.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,14 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected void sendKeys(By by, String value, String waitStrategy){
+    protected void sendKeys(By by, String value, WaitStrategy waitStrategy){
 
-        if(waitStrategy.equalsIgnoreCase("clickable")){
+        if(waitStrategy == WaitStrategy.CLICKABLE){
 
             waitForElementToBeClickable(by);
         }
 
-        else if (waitStrategy.equalsIgnoreCase("present")){
+        else if (waitStrategy== WaitStrategy.PRESENCE){
 
             waitForElementToBePresent(by);
         }
@@ -24,14 +25,14 @@ public class BasePage {
         DriverManager.getDriver().findElement(by).sendKeys(value);
     }
 
-    protected void click(By by,String waitStrategy){
+    protected void click(By by,WaitStrategy waitStrategy){
 
-        if(waitStrategy.equalsIgnoreCase("clickable")){
+        if(waitStrategy== WaitStrategy.CLICKABLE){
 
             waitForElementToBeClickable(by);
         }
 
-        else if (waitStrategy.equalsIgnoreCase("present")){
+        else if (waitStrategy== WaitStrategy.PRESENCE){
 
             waitForElementToBePresent(by);
         }
@@ -39,14 +40,14 @@ public class BasePage {
         DriverManager.getDriver().findElement(by).click();
     }
 
-    protected String getText(By by,String waitStrategy){
+    protected String getText(By by, WaitStrategy waitStrategy){
 
-        if(waitStrategy.equalsIgnoreCase("clickable")){
+        if(waitStrategy== WaitStrategy.CLICKABLE){
 
             waitForElementToBeClickable(by);
         }
 
-        else if (waitStrategy.equalsIgnoreCase("present")){
+        else if (waitStrategy== WaitStrategy.PRESENCE){
 
             waitForElementToBePresent(by);
         }

@@ -1,6 +1,7 @@
 package pages;
 
 import driver.DriverManager;
+import enums.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,21 +19,21 @@ public final class OrangeHRMLoginPage extends BasePage{
     public OrangeHRMLoginPage enterUsername(String username){
 
 //        DriverManager.getDriver().findElement(usernameBox).sendKeys(username);
-        sendKeys(usernameBox,username,"present");
+        sendKeys(usernameBox,username,WaitStrategy.PRESENCE);
         return this;
     }
 
     public OrangeHRMLoginPage enterPassword(String passwordValue){
 
 //        DriverManager.getDriver().findElement(passwordBox).sendKeys(password);
-        sendKeys(passwordBox,passwordValue,"present");
+        sendKeys(passwordBox,passwordValue, WaitStrategy.PRESENCE);
         return this;
     }
 
     public OrangeHRMHomePage clickLoginButton(){
 
 //        DriverManager.getDriver().findElement(loginButton).click();
-        click(loginButton,"clickable");
+        click(loginButton,WaitStrategy.CLICKABLE);
         return new OrangeHRMHomePage();
     }
 
@@ -41,6 +42,6 @@ public final class OrangeHRMLoginPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
         wait.until(ExpectedConditions.elementToBeClickable(invalidCredsError));
 //        return DriverManager.getDriver().findElement(invalidCredsError).getText();
-        return getText(invalidCredsError,"present");
+        return getText(invalidCredsError, WaitStrategy.PRESENCE);
     }
 }
