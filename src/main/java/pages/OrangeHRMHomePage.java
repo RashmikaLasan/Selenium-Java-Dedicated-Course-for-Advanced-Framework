@@ -1,6 +1,7 @@
 package pages;
 
 import driver.DriverManager;
+import enums.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,7 +19,7 @@ public final class OrangeHRMHomePage extends BasePage{
     public OrangeHRMHomePage clickWelcomeLink(){
 
 //        DriverManager.getDriver().findElement(welcomeLink).click();
-        click(welcomeLink,"clickable");
+        click(welcomeLink, WaitStrategy.CLICKABLE);
         return this;
     }
 
@@ -27,7 +28,7 @@ public final class OrangeHRMHomePage extends BasePage{
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
         wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
 //        DriverManager.getDriver().findElement(logoutButton).click();
-        click(logoutButton,"clickable");
+        click(logoutButton,WaitStrategy.CLICKABLE);
         return new OrangeHRMLoginPage();
     }
 
