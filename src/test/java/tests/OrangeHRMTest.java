@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.OrangeHRMHomePage;
 import pages.OrangeHRMLoginPage;
@@ -10,31 +11,42 @@ public final class OrangeHRMTest extends BaseTest {
     private OrangeHRMTest(){
     }
 
-    @Test
-    public void loginTest(){
+    @Test(dataProvider = "LoginTestData")
+    public void loginTest(String username, String password){
 
         OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
 //        OrangeHRMHomePage hp = new OrangeHRMHomePage();
 
-        lp.enterUsername("Admin").
-            enterPassword("admin123").
+        lp.enterUsername(username).
+            enterPassword(password).
             clickLoginButton().
             clickWelcomeLink().
             clickLogoutButton();
 
     }
 
-    @Test
-    public void loginWithInvalidCredsTet() throws InterruptedException {
+//    @Test
+//    public void loginWithInvalidCredsTet() throws InterruptedException {
+//
+//        OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
+//        OrangeHRMHomePage hp = new OrangeHRMHomePage();
+//
+//        lp.enterUsername("Admin123").
+//            enterPassword("admin321").
+//            clickLoginButton();
+//
+//        Assert.assertEquals(lp.invalidCredsErrorText(),"Invalid credentials");
+//
+//    }
 
-        OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
-        OrangeHRMHomePage hp = new OrangeHRMHomePage();
+    @DataProvider(name="LoginTestData")
+    public Object[][] getData(){
 
-        lp.enterUsername("Admin123").
-            enterPassword("admin321").
-            clickLoginButton();
-
-        Assert.assertEquals(lp.invalidCredsErrorText(),"Invalid credentials");
+        return new Object[][]{
+                {"Admin","admin123"},
+                {"Admin123","admin"},
+                {"Admin","admin123"}
+        };
 
     }
 }
