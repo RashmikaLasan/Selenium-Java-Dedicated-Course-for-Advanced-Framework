@@ -9,6 +9,7 @@ import pages.OrangeHRMLoginPage;
 public final class OrangeHRMTest extends BaseTest {
 
     private OrangeHRMTest(){
+
     }
 
     @Test(dataProvider = "LoginTestData")
