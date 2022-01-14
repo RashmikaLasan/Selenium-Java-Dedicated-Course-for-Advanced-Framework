@@ -1,10 +1,12 @@
 package utils;
 
 import constants.FrameworkConstants;
+import enums.ConfigProperties;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -34,10 +36,10 @@ public final class ReadPropertyFile {
 
     }
 
-    public static String getValue(String key) throws Exception {
+    public static String getValue(ConfigProperties key) throws Exception {
 
         String value="";
-        value = properties.getProperty(key);
+        value = properties.getProperty(key.name().toLowerCase(Locale.ROOT));
 
         if(Objects.isNull(value)){
 

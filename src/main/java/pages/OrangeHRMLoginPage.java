@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 //To prevent of extending this class
-//Won't create a constructor here;
+//Won't create a constructor here
 public final class OrangeHRMLoginPage extends BasePage{
 
     private final By usernameBox = By.xpath("//input[@name='txtUsername']");
@@ -33,7 +33,7 @@ public final class OrangeHRMLoginPage extends BasePage{
     public OrangeHRMHomePage clickLoginButton(){
 
 //        DriverManager.getDriver().findElement(loginButton).click();
-        click(loginButton,WaitStrategy.CLICKABLE);
+        click(loginButton, WaitStrategy.CLICKABLE);
         return new OrangeHRMHomePage();
     }
 
