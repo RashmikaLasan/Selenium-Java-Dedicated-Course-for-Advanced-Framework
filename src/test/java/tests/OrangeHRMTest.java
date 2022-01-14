@@ -12,6 +12,20 @@ public final class OrangeHRMTest extends BaseTest {
 
     }
 
+    @Test
+    public void loginWithInvalidCredsTet() throws InterruptedException {
+
+        OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
+        OrangeHRMHomePage hp = new OrangeHRMHomePage();
+
+        lp.enterUsername("Admin123").
+                enterPassword("admin321").
+                clickLoginButton();
+
+        Assert.assertEquals(lp.invalidCredsErrorText(),"Invalid credentials");
+
+    }
+
     @Test(dataProvider = "LoginTestData")
     public void loginTest(String username, String password){
 
@@ -26,28 +40,7 @@ public final class OrangeHRMTest extends BaseTest {
 
     }
 
-    @Test
-    public void loginWithInvalidCredsTet() throws InterruptedException {
 
-        OrangeHRMLoginPage lp = new OrangeHRMLoginPage();
-        OrangeHRMHomePage hp = new OrangeHRMHomePage();
 
-        lp.enterUsername("Admin123").
-            enterPassword("admin321").
-            clickLoginButton();
 
-        Assert.assertEquals(lp.invalidCredsErrorText(),"Invalid credentials");
-
-    }
-
-    @DataProvider(name="LoginTestData",parallel = true)
-    public Object[][] getData(){
-
-        return new Object[][]{
-                {"Admin","admin123"},
-                {"Admin123","admin"},
-                {"Admin","admin123"}
-        };
-//Test
-    }
 }
