@@ -40,7 +40,7 @@ public final class OrangeHRMTest extends BaseTest {
 
     }
 
-    @DataProvider(name="LoginTestData")
+    @DataProvider(name="LoginTestData",parallel = true)
     public Object[][] getData(){
 
         return new Object[][]{
