@@ -44,9 +44,9 @@ public final class OrangeHRMTest extends BaseTest {
     public Object[][] getData(){
 
         return new Object[][]{
-                {"Admin","admin123"},
+                {"Adminsssss","admin1234567"},
                 {"Admin123","admin"},
-                {"Admin","admin123"}
+                {"Adminsdsdsd","admin123sdsdsdsd"}
         };
 //Test
 
